@@ -16,6 +16,7 @@ var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const favoriteRouter = require('./routes/favoriteRouter')
 
 const mongoose = require('mongoose');
 
@@ -60,7 +61,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/dishes',dishRouter);
 app.use('/promotions',promoRouter);
 app.use('/leaders',leaderRouter);
-app.use('/imageUpload',uploadRouter);
+app.use('/favorites',favoriteRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
